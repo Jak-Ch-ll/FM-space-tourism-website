@@ -1,5 +1,7 @@
 @use "abstracts" as *;
 
+html,
+body,
 h1,
 h2,
 h3,
@@ -7,9 +9,11 @@ h4,
 h5,
 h6,
 p,
-button,
-a {
-	all: unset;
+a,
+ul,
+ol {
+	margin: 0;
+	padding: 0;
 }
 
 *,
@@ -19,8 +23,17 @@ a {
 }
 
 body {
-	@include font-body;
+	@include type-body;
 
 	background-color: $clr-primary-dark;
 	color: $clr-primary-light;
+
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+button,
+a {
+	all: unset;
+	cursor: pointer;
 }

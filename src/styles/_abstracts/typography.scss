@@ -8,24 +8,28 @@ $ff-special: "Barlow Condensed", serif;
 	font-family: $ff-heading;
 	font-weight: 400;
 	font-size: 9.375rem;
+	text-transform: uppercase;
 }
 
 @mixin type-heading-2 {
 	font-family: $ff-heading;
 	font-weight: 400;
 	font-size: 6.25rem;
+	text-transform: uppercase;
 }
 
 @mixin type-heading-3 {
 	font-family: $ff-heading;
 	font-weight: 400;
 	font-size: 3.5rem;
+	text-transform: uppercase;
 }
 
 @mixin type-heading-4 {
 	font-family: $ff-heading;
 	font-weight: 400;
 	font-size: 2rem;
+	text-transform: uppercase;
 }
 
 @mixin type-heading-5 {
@@ -33,6 +37,7 @@ $ff-special: "Barlow Condensed", serif;
 	font-weight: 400;
 	font-size: 1.75rem;
 	letter-spacing: 0.295rem;
+	text-transform: uppercase;
 }
 
 @mixin type-subheading-1 {
@@ -55,7 +60,7 @@ $ff-special: "Barlow Condensed", serif;
 	letter-spacing: 0.16875rem;
 }
 
-@mixin font-body {
+@mixin type-body {
 	font-family: $ff-copy;
 	font-weight: 400;
 	font-size: 1.125rem;
