@@ -1,0 +1,26 @@
+@use "abstracts" as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+a {
+	all: unset;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	@include font-body;
+
+	background-color: $clr-primary-dark;
+	color: $clr-primary-light;
+}

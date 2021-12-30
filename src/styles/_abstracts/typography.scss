@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap");
+
+$ff-heading: "Bellefair", serif;
+$ff-copy: "Barlow", sans-serif;
+$ff-special: "Barlow Condensed", serif;
+
+@mixin type-heading-1 {
+	font-family: $ff-heading;
+	font-weight: 400;
+	font-size: 9.375rem;
+}
+
+@mixin type-heading-2 {
+	font-family: $ff-heading;
+	font-weight: 400;
+	font-size: 6.25rem;
+}
+
+@mixin type-heading-3 {
+	font-family: $ff-heading;
+	font-weight: 400;
+	font-size: 3.5rem;
+}
+
+@mixin type-heading-4 {
+	font-family: $ff-heading;
+	font-weight: 400;
+	font-size: 2rem;
+}
+
+@mixin type-heading-5 {
+	font-family: $ff-special;
+	font-weight: 400;
+	font-size: 1.75rem;
+	letter-spacing: 0.295rem;
+}
+
+@mixin type-subheading-1 {
+	font-family: $ff-heading;
+	font-weight: 400;
+	font-size: 1.75rem;
+}
+
+@mixin type-subheading-1 {
+	font-family: $ff-special;
+	font-weight: 400;
+	font-size: 0.875rem;
+	letter-spacing: 0.1475;
+}
+
+@mixin type-nav {
+	font-family: $ff-special;
+	font-weight: 400;
+	font-size: 1rem;
+	letter-spacing: 0.16875rem;
+}
+
+@mixin font-body {
+	font-family: $ff-copy;
+	font-weight: 400;
+	font-size: 1.125rem;
+}
