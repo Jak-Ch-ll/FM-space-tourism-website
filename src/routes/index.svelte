@@ -20,7 +20,7 @@
 	@use "src/styles/_abstracts" as *;
 
 	:global(body) {
-		background-image: url("/imgs/home/background-home-desktop.jpg");
+		background-image: url("$lib/assets/imgs/home/background-home-desktop.jpg");
 	}
 
 	main {
