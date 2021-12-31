@@ -2,7 +2,7 @@
 	import { page } from "$app/stores";
 
 	import "../styles/global.scss";
-	import logoIcon from "/icons/logo.svg";
+	import logoIcon from "$lib/assets/icons/logo.svg";
 
 	const navTargets = [
 		{ label: "Home", url: "/" },
@@ -13,7 +13,6 @@
 </script>
 
 <header>
-	<!-- <div class="container"> -->
 	<div class="logo">
 		<a href="/"><img src={logoIcon} alt="" /></a>
 	</div>
@@ -21,14 +20,13 @@
 		<ol>
 			{#each navTargets as target}
 				<li>
-					<a class:active={target.url === $page.path} href={target.url}
+					<a class:active={target.url === $page.url.pathname} href={target.url}
 						>{target.label}</a
 					>
 				</li>
 			{/each}
 		</ol>
 	</nav>
-	<!-- </div> -->
 </header>
 <slot />
 
