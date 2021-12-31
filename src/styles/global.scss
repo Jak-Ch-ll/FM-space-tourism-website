@@ -32,6 +32,14 @@ body {
 	background-attachment: fixed;
 }
 
+#svelte {
+	max-width: $site-max-width;
+	height: 56.25rem;
+	margin: 0 auto;
+
+	position: relative;
+}
+
 button,
 a {
 	all: unset;

@@ -13,6 +13,7 @@
 </script>
 
 <header>
+	<!-- <div class="container"> -->
 	<div class="logo">
 		<a href="/"><img src={logoIcon} alt="" /></a>
 	</div>
@@ -27,6 +28,7 @@
 			{/each}
 		</ol>
 	</nav>
+	<!-- </div> -->
 </header>
 <slot />
 
@@ -36,11 +38,11 @@
 	header {
 		position: absolute;
 		top: 2.5rem;
-		width: 100vw;
+		left: 0;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		// padding-left: $site-padding;
 	}
 
 	.logo {
@@ -82,9 +84,6 @@
 		width: fit-content;
 		margin-left: auto;
 
-		background: rgba(255, 255, 255, 0.04);
-		backdrop-filter: blur(81.5485px);
-
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
@@ -92,6 +91,25 @@
 
 		counter-reset: list -1;
 		list-style-type: none;
+
+		position: relative;
+
+		// use pseudo element for background, because it needs to overflow to the edge of the screen
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			background: rgba(255, 255, 255, 0.04);
+			backdrop-filter: blur(81.5485px);
+			z-index: -1;
+
+			// calc negative overflow when site width is smaller then the available space
+			$right-overflow: calc((100vw - #{$site-max-width}) * -0.5);
+			// only apply negative overflow
+			right: min(0rem, $right-overflow);
+		}
 	}
 
 	li {
