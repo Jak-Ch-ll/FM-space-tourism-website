@@ -38,10 +38,9 @@ TBA
 
 ### Links
 
-TBA
-
-<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com) -->
+<!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
+- [Live Site on Netlify](https://fm-space.netlify.app/)
+- [Code on Github](https://github.com/Jak-Ch-ll/FM-space-tourism-website)
 
 ## My process
 
