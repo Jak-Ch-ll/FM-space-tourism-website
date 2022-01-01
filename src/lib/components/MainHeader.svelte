@@ -17,7 +17,7 @@
 
 <header>
 	<div class="logo">
-		<a href="/"><img src={logoIcon} alt="" /></a>
+		<a href="/"><img src={logoIcon} alt="Home" /></a>
 	</div>
 	<button class="toggle-menu-btn" on:click={() => (menuOpen = !menuOpen)}>
 		<img
