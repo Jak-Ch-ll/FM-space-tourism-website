@@ -23,25 +23,27 @@ ol {
 }
 
 body {
-	@include type-body;
+	@include type--body;
 
-	background-color: $clr-primary-dark;
-	color: $clr-primary-light;
+	background-color: $clr--primary-dark;
+	color: $clr--primary-light;
 
 	background-size: cover;
 	background-attachment: fixed;
 }
 
 #svelte {
-	max-width: $site-max-width;
-	height: 56.25rem;
+	max-width: $layout--site-max-width;
 	margin: 0 auto;
-
-	position: relative;
 }
 
 button,
 a {
 	all: unset;
 	cursor: pointer;
+}
+
+img {
+	display: block;
+	max-width: 100%;
 }

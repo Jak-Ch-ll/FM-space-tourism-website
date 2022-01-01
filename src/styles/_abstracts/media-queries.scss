@@ -1,0 +1,11 @@
+@mixin tablet {
+	@media (min-width: 48em) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: 72em) and (orientation: landscape) {
+		@content;
+	}
+}

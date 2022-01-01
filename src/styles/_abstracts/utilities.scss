@@ -1,0 +1,16 @@
+@use "media-queries" as media;
+
+@mixin background-image($site) {
+	:global(body) {
+		$base-url: "$lib/assets/imgs/" + $site + "/background-" + $site;
+		background-image: url($base-url + "-mobile.jpg");
+
+		@include media.tablet {
+			background-image: url($base-url + "-tablet.jpg");
+		}
+
+		@include media.desktop {
+			background-image: url($base-url + "-desktop.jpg");
+		}
+	}
+}

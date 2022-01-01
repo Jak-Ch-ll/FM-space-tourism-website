@@ -4,64 +4,78 @@ $ff-heading: "Bellefair", serif;
 $ff-copy: "Barlow", sans-serif;
 $ff-special: "Barlow Condensed", serif;
 
-@mixin type-heading-1 {
+// font-sizes calculated with https://utopia.fyi/type/calculator/
+
+@mixin heading-1 {
 	font-family: $ff-heading;
 	font-weight: 400;
-	font-size: 9.375rem;
 	text-transform: uppercase;
+	line-height: 1;
+
+	font-size: 5rem;
+	font-size: clamp(5rem, 0.77rem + 18.04vw, 9.375rem);
 }
 
-@mixin type-heading-2 {
+@mixin heading-2 {
 	font-family: $ff-heading;
 	font-weight: 400;
 	font-size: 6.25rem;
 	text-transform: uppercase;
 }
 
-@mixin type-heading-3 {
+@mixin heading-3 {
 	font-family: $ff-heading;
 	font-weight: 400;
 	font-size: 3.5rem;
 	text-transform: uppercase;
 }
 
-@mixin type-heading-4 {
+@mixin heading-4 {
 	font-family: $ff-heading;
 	font-weight: 400;
-	font-size: 2rem;
 	text-transform: uppercase;
+
+	font-size: 1.25rem;
+	font-size: clamp(1.25rem, 0.53rem + 3.09vw, 2rem);
 }
 
-@mixin type-heading-5 {
+@mixin heading-5 {
 	font-family: $ff-special;
 	font-weight: 400;
-	font-size: 1.75rem;
 	letter-spacing: 0.295rem;
 	text-transform: uppercase;
+
+	font-size: 1rem;
+	font-size: clamp(1rem, 0.74rem + 1.13vw, 1.75rem);
 }
 
-@mixin type-subheading-1 {
+@mixin subheading-1 {
 	font-family: $ff-heading;
 	font-weight: 400;
 	font-size: 1.75rem;
 }
 
-@mixin type-subheading-1 {
+@mixin subheading-1 {
 	font-family: $ff-special;
 	font-weight: 400;
 	font-size: 0.875rem;
 	letter-spacing: 0.1475;
 }
 
-@mixin type-nav {
+@mixin nav {
 	font-family: $ff-special;
 	font-weight: 400;
 	font-size: 1rem;
 	letter-spacing: 0.16875rem;
 }
 
-@mixin type-body {
+@mixin body {
 	font-family: $ff-copy;
 	font-weight: 400;
-	font-size: 1.125rem;
+
+	font-size: 0.9375rem;
+	font-size: clamp(0.9375rem, 0.87rem + 0.28vw, 1.125rem);
+
+	line-height: 1.5625rem;
+	line-height: clamp(1.5625rem, 1.41rem + 0.66vw, 2rem);
 }

@@ -1,3 +1,5 @@
-@forward "typography";
-@forward "colors";
-@forward "layout";
+@forward "typography" as type--*;
+@forward "colors" as clr--*;
+@forward "layout" as layout--*;
+@forward "media-queries" as media--*;
+@forward "utilities" as util--*;
