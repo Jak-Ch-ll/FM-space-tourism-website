@@ -92,6 +92,7 @@
 
 		// hover effect
 		position: relative;
+		z-index: 0;
 		&::after {
 			content: "";
 			position: absolute;
