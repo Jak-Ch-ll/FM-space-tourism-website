@@ -3,25 +3,30 @@
 </svelte:head>
 
 <main>
-	<div class="text">
-		<h1>
-			So, you want to travel to <div>Space</div>
-		</h1>
-		<p>
-			Let’s face it; if you want to go to space, you might as well genuinely go
-			to outer space and not hover kind of on the edge of it. Well sit back, and
-			relax because we’ll give you a truly out of this world experience!
-		</p>
+	<div class="content">
+		<div class="text">
+			<h1>
+				So, you want to travel to <div>Space</div>
+			</h1>
+			<p>
+				Let’s face it; if you want to go to space, you might as well genuinely
+				go to outer space and not hover kind of on the edge of it. Well sit
+				back, and relax because we’ll give you a truly out of this world
+				experience!
+			</p>
+		</div>
+		<a class="cta" href="/destination">Explore</a>
 	</div>
-	<a class="cta" href="/destination">Explore</a>
 </main>
 
 <style lang="scss">
 	@use "src/styles/_abstracts" as *;
 
-	@include util--background-image("home");
-
 	main {
+		@include util--background-image(home);
+	}
+
+	.content {
 		height: 100%;
 
 		display: flex;

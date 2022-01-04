@@ -42,9 +42,25 @@
 	@use "src/styles/_abstracts" as *;
 
 	$media-md: "min-width: 44em";
-	$media-lg: "min-width: 62em";
+	$media-lg: "min-width: 64em";
+
+	:global(main) {
+		padding-top: 4.5rem;
+
+		@media ($media-md) {
+			padding-top: 6rem;
+		}
+
+		@media ($media-lg) {
+			padding-top: 6rem + 1.5rem;
+		}
+	}
 
 	header {
+		position: absolute;
+		width: 100%;
+		max-width: $layout--site-max-width;
+
 		padding: 1.5rem;
 		padding-bottom: 0;
 		display: flex;
@@ -53,10 +69,14 @@
 
 		@media ($media-md) {
 			padding: 0;
+			padding-left: 2.5rem;
 		}
 
 		@media ($media-lg) {
+			padding: 0;
 			padding-top: 2.5rem;
+			$margin-left: calc((100vw - $layout--site-max-width) * 0.5);
+			margin-left: max(0rem, $margin-left);
 		}
 	}
 
@@ -85,7 +105,7 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		bottom: 0;
+		height: 100vh;
 		z-index: 1;
 
 		@include type--nav;
@@ -93,6 +113,7 @@
 		@media ($media-md) {
 			position: relative;
 			width: 100%;
+			height: auto;
 		}
 
 		// decorative line on large displays
@@ -135,6 +156,7 @@
 				backdrop-filter: blur(81.5485px);
 			}
 		}
+		@include blur;
 
 		// preperation for the numbering
 		counter-reset: list -1;

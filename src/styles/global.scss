@@ -27,12 +27,16 @@ body {
 
 	background-color: $clr--primary-dark;
 	color: $clr--primary-light;
+	overflow-x: hidden;
+}
 
+main {
+	min-height: 100vh;
 	background-size: cover;
 	background-attachment: fixed;
 }
 
-#svelte {
+.content {
 	max-width: $layout--site-max-width;
 	margin: 0 auto;
 }
