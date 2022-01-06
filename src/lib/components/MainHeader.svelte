@@ -280,12 +280,12 @@
 			transition: opacity 0.2s ease-in;
 		}
 
-		&.active::after {
-			opacity: 1;
-		}
-
 		&:hover::after {
 			opacity: 0.5;
+		}
+
+		&.active::after {
+			opacity: 1;
 		}
 	}
 </style>
