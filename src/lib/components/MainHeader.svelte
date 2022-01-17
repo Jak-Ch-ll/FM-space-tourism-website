@@ -25,12 +25,14 @@
 			alt={`${menuOpen ? "Close" : "Open"} menu`}
 		/>
 	</button>
-	<nav>
+	<nav class:menuOpen>
 		<ol class:menuOpen>
 			{#each navTargets as target}
 				<li>
-					<a class:active={target.url === $page.url.pathname} href={target.url}
-						>{target.label}</a
+					<a
+						class:active={target.url === $page.url.pathname}
+						href={target.url}
+						on:click={() => (menuOpen = false)}>{target.label}</a
 					>
 				</li>
 			{/each}
@@ -43,6 +45,19 @@
 
 	$media-md: "min-width: 44em";
 	$media-lg: "min-width: 64em";
+	@mixin blur($active: true) {
+		@if $active {
+			background-color: rgba($clr--primary-dark, 0.8);
+
+			@supports (backdrop-filter: blur(81.5485px)) {
+				background: rgba(255, 255, 255, 0.04);
+				backdrop-filter: blur(81.5485px);
+			}
+		} @else {
+			background: none;
+			backdrop-filter: none;
+		}
+	}
 
 	:global(main) {
 		padding-top: 4.5rem;
@@ -52,7 +67,7 @@
 		}
 
 		@media ($media-lg) {
-			padding-top: 6rem + 1.5rem;
+			padding-top: 6rem + 2.5rem;
 		}
 	}
 
@@ -108,7 +123,9 @@
 		height: 100vh;
 		z-index: 1;
 
-		@include type--nav;
+		@include type--nav-1;
+
+		@include blur;
 
 		@media ($media-md) {
 			position: relative;
@@ -118,6 +135,9 @@
 
 		// decorative line on large displays
 		@media ($media-lg) {
+			// remove blur on larger screens, its handled by a pseudo element in the ol
+			@include blur(false);
+
 			&::before {
 				content: "";
 				position: absolute;
@@ -131,15 +151,29 @@
 				opacity: 0.25;
 				z-index: 100;
 			}
+		} // animation: fade; additionally shrink menu to 0, so its not clickable but still accessible via screen readers
+		opacity: 0;
+		transform: scale(0);
+		transition: opacity 0.2s ease-in, transform 0s 0.2s;
+
+		&.menuOpen {
+			opacity: 1;
+			transform: scale(1);
+			transition: opacity 0.2s ease-in;
+		}
+
+		@media ($media-md) {
+			opacity: 1;
+			transform: scale(1);
 		}
 	}
 
 	ol {
-		height: 100%;
 		min-width: 15.875rem;
-
 		padding-left: 2rem;
 		padding-top: 7.275rem;
+		height: 100%;
+
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
@@ -147,16 +181,6 @@
 		& > * + * {
 			margin-top: 2rem;
 		}
-
-		@mixin blur {
-			background-color: rgba($clr--primary-dark, 0.8);
-
-			@supports (backdrop-filter: blur(81.5485px)) {
-				background: rgba(255, 255, 255, 0.04);
-				backdrop-filter: blur(81.5485px);
-			}
-		}
-		@include blur;
 
 		// preperation for the numbering
 		counter-reset: list -1;
@@ -184,8 +208,6 @@
 			}
 
 			// use pseudo element for background und larger screens, because it needs to overflow to the edge of the screen
-			background: none;
-			backdrop-filter: none;
 			position: relative;
 			&::after {
 				content: "";
@@ -202,22 +224,6 @@
 				// only apply negative overflow
 				right: min(0rem, $right-overflow);
 			}
-		}
-
-		// animation: fade; additionally shrink menu to 0, so its not clickable but still accessible via screen readers
-		opacity: 0;
-		transform: scale(0);
-		transition: opacity 0.2s ease-in, transform 0s 0.2s;
-
-		&.menuOpen {
-			opacity: 1;
-			transform: scale(1);
-			transition: opacity 0.2s ease-in;
-		}
-
-		@media ($media-md) {
-			opacity: 1;
-			transform: scale(1);
 		}
 	}
 
@@ -280,7 +286,8 @@
 			transition: opacity 0.2s ease-in;
 		}
 
-		&:hover::after {
+		&:hover::after,
+		&:focus::after {
 			opacity: 0.5;
 		}
 
