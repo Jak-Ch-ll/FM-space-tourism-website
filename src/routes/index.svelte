@@ -34,15 +34,14 @@
 
 		flex-direction: column;
 		align-items: center;
-		padding: 1.5rem;
-		padding-top: 12.8vh;
+		padding: 12.9rem 1.5rem 3rem;
 
 		text-align: center;
 
 		@include media--desktop {
 			margin-top: 27.9vh;
 
-			padding: 0 $layout--site-padding;
+			padding: 0 $layout--site-padding 3rem;
 			flex-direction: row;
 			align-items: flex-end;
 
